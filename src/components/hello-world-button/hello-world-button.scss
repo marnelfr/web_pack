@@ -1,0 +1,17 @@
+$btn-background-color: #010101;
+$btn-color: #FFF;
+$text-color: green;
+$text-size: 3em;
+
+.btn-hello{
+  border: none;
+  background-color: $btn-background-color;
+  padding: 1em 2em;
+  border-radius: 3px;
+  color: $btn-color
+}
+
+.text-hello {
+  color: $text-color;
+  font-size: $text-size
+}
