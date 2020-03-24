@@ -1,5 +1,4 @@
-import helloWorld from './hello-world'
-import imageLoader from './add-image'
+import HelloWorldButton from './components/hello-world-button/hello-world-button.js'
 
-helloWorld()
-imageLoader()
+let helloWorldButton = new HelloWorldButton()
+helloWorldButton.render()
