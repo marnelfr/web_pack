@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
-  mode: 'none',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -19,12 +19,12 @@ module.exports = {
         use: [
           'file-loader'
         ]
-      },{
+      }/*,{
         test: /\.css$/,
         use: [
           MiniCssExtract.loader ,'css-loader'
         ]
-      },{
+      }*/,{
         test: /\.scss$/,
         use: [
           MiniCssExtract.loader, 'css-loader', 'sass-loader'
