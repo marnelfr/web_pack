@@ -30,3 +30,5 @@ npm i html-webpack-plugin -D
 
 //Using template with webpack need a templating. One of them is handlebars
 npm i handlebars-loader handlebars -D
+
+//Webpack mode option allow setting production or development mode. production mode enable terserPlugin. Development mode don't
