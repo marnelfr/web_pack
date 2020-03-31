@@ -39,6 +39,9 @@ module.exports = {
             plugins: [ 'transform-class-properties' ]
           }
         }
+      }, {
+        test: /\.hbs$/,
+        use: [ 'handlebars-loader' ]
       }
     ]
   },
@@ -50,7 +53,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Hello World',
-      filename: 'test.html'
+      description: 'Trying to understand how to use webpack',
+      filename: 'index.html',
+      template: 'src/index.hbs'
     })
   ]
 }

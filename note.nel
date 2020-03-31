@@ -27,3 +27,6 @@ npm i clean-webpack-plugin -D
 
 //The index.html file too can be generated and contain the corrects js and css built
 npm i html-webpack-plugin -D
+
+//Using template with webpack need a templating. One of them is handlebars
+npm i handlebars-loader handlebars -D
