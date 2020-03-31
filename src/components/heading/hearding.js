@@ -15,6 +15,6 @@ export default class Heading {
 
   render($content) {
     this.html($content)
-    document.appendChild(this.elm)
+    document.querySelector('body').appendChild(this.elm)
   }
 }

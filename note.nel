@@ -23,3 +23,7 @@ npm install mini-css-extract-plugin --save-dev
 
 //The way to clean dist folder before build if using contenthash
 npm i clean-webpack-plugin -D
+  The directory that should be clean can be specify: new CleanWebpackPlugin(['dist', 'src/trash'])
+
+//The index.html file too can be generated and contain the corrects js and css built
+npm i html-webpack-plugin -D
