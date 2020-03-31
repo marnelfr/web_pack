@@ -48,6 +48,9 @@ module.exports = {
       filename: 'style.[contenthash].css'
     }),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'Hello World',
+      filename: 'test.html'
+    })
   ]
 }
