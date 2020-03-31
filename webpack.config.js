@@ -1,11 +1,12 @@
-const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtract = require('mini-css-extract-plugin')
+const path = require('path'),
+  TerserPlugin = require('terser-webpack-plugin'),
+  MiniCssExtract = require('mini-css-extract-plugin'),
+  { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: 'dist/' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
@@ -42,8 +43,9 @@ module.exports = {
   },
   plugins: [
     new TerserPlugin(),
+    new CleanWebpackPlugin(),
     new MiniCssExtract({
-      filename: 'style.css'
+      filename: 'style.[contenthash].css'
     })
   ]
 }
