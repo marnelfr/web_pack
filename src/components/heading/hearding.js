@@ -13,8 +13,11 @@ export default class Heading {
     this.elm.innerHTML = !$content ? this.defaultTitle : $content
   }
 
-  render($content) {
+  render($content, $color = 'red') {
     this.html($content)
+    if ($color !== 'red') {
+      this.elm.setAttribute('style', 'color: ' + $color);
+    }
     document.querySelector('body').appendChild(this.elm)
   }
 }

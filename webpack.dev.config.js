@@ -1,15 +1,21 @@
 const path = require('path'),
   { CleanWebpackPlugin } = require('clean-webpack-plugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin')
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  distFolder = path.resolve(__dirname, './dist')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist'),
+    path: distFolder,
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
   mode: 'development',
+  devServer: {
+    contentBase: distFolder,
+    index: 'index.html',
+    port: 8000
+  },
   module: {
     rules: [
       {

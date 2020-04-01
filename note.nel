@@ -32,3 +32,8 @@ npm i html-webpack-plugin -D
 npm i handlebars-loader handlebars -D
 
 //Webpack mode option allow setting production or development mode. production mode enable terserPlugin. Development mode don't
+
+//It's better to split our dev and production webpack configuration.
+
+//We can use webpack-dev-server to make faster our code writting.
+npm i webpack-dev-server -D
