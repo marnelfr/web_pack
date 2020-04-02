@@ -6,10 +6,11 @@ const path = require('path'),
 module.exports = {
   entry: {
     hello: './src/hello.js',
-    pretre: './src/pretre.js'
+    pretre: './src/pretre.js',
+    about: './src/about.js'
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
@@ -54,7 +55,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtract({
-      filename: '[name].[contenthash].css'
+      filename: 'css/[name].[contenthash].css'
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -76,6 +77,13 @@ module.exports = {
         // ,'vendors~hello~pretre' //Il semble que webpack l'inclut par défaut
       ],
       description: 'Showing the big pretre',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/page-template.hbs',
+      title: 'About',
+      chunks: [ 'about' ],
+      description: 'About our web site'
     })
   ]
 }
