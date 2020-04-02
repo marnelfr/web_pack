@@ -14,6 +14,11 @@ module.exports = {
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
   mode: 'production',
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   module: {
     rules: [
       {
@@ -57,6 +62,7 @@ module.exports = {
       title: 'Hello World',
       chunks: [
         'hello'
+        // ,'vendors~hello~pretre' //Il semble que webpack l'inclut par défaut
       ],
       description: 'Trying to understand how to use webpack',
       template: 'src/page-template.hbs'
@@ -67,6 +73,7 @@ module.exports = {
       title: 'Grand Prêtre',
       chunks: [
         'pretre'
+        // ,'vendors~hello~pretre' //Il semble que webpack l'inclut par défaut
       ],
       description: 'Showing the big pretre',
     })
