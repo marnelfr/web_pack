@@ -53,10 +53,22 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Hello World',
-      description: 'Trying to understand how to use webpack',
       filename: 'index.html',
-      template: 'src/index.hbs'
+      title: 'Hello World',
+      chunks: [
+        'hello'
+      ],
+      description: 'Trying to understand how to use webpack',
+      template: 'src/page-template.hbs'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pretre.html',
+      template: 'src/page-template.hbs',
+      title: 'Grand Prêtre',
+      chunks: [
+        'pretre'
+      ],
+      description: 'Showing the big pretre',
     })
   ]
 }
