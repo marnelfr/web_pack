@@ -4,9 +4,6 @@ import Header from './components/heading/hearding'
 let head = new Header()
 head.render()
 
-let head2 = new Header()
-head2.render('WebServer set up', 'black')
-
 let helloWorldButton = new HelloWorldButton()
 helloWorldButton.render()
 
