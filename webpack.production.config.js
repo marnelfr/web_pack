@@ -4,9 +4,12 @@ const path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    hello: './src/hello.js',
+    pretre: './src/pretre.js'
+  },
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
@@ -46,7 +49,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtract({
-      filename: 'style.[contenthash].css'
+      filename: '[name].[contenthash].css'
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
