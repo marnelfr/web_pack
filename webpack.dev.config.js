@@ -4,9 +4,13 @@ const path = require('path'),
   distFolder = path.resolve(__dirname, './dist')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'hello': './src/hello.js',
+    'about': './src/about.js',
+    'pretre': './src/pretre.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: distFolder,
     publicPath: '' //C'est le chemin vers le dossier contenant nos assets (images,...)
   },
@@ -52,10 +56,25 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
+      chunks: ['hello'],
       title: 'Hello World',
       description: 'Trying to understand how to use webpack',
-      filename: 'index.html',
-      template: 'src/index.hbs'
+      template: 'src/page-template.hbs'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      chunks: ['about'],
+      title: 'About',
+      description: 'About the application',
+      template: 'src/page-template.hbs'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pretre.html',
+      chunks: ['pretre'],
+      title: 'Pretre',
+      description: 'Pretre',
+      template: 'src/page-template.hbs'
     })
   ]
 }

@@ -1,5 +1,11 @@
 import Hearding from './components/heading/hearding'
 import Text from './components/text/text'
+import Linker from './components/linker/linker'
+
+/*let linker = Linker('Home', '/')
+linker.render()
+linker = Linker('Pretre', '/pretre.html')
+linker.render()*/
 
 let hearding = new Hearding()
 hearding.render('About', 'black')

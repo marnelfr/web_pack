@@ -1,6 +1,12 @@
 import HelloWorldButton from './components/hello-world-button/hello-world-button'
 import Header from './components/heading/hearding'
 import _ from 'lodash'
+import Linker from './components/linker/linker'
+
+/*let linker = Linker('About', '/about.html')
+linker.render()
+linker = Linker('Pretre', '/pretre.html')
+linker.render()*/
 
 let head = new Header(_.upperFirst('accueil'))
 head.render()
