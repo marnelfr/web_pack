@@ -37,3 +37,28 @@ npm i handlebars-loader handlebars -D
 
 //We can use webpack-dev-server to make faster our code writting.
 npm i webpack-dev-server -D
+
+//Using bootstrap
+
+//Using fontawesome
+npm install --save-dev @fortawesome/fontawesome-free
+and I added to index.js
+  import '@fortawesome/fontawesome-free/js/fontawesome'
+  import '@fortawesome/fontawesome-free/js/solid'
+  import '@fortawesome/fontawesome-free/js/regular'
+  import '@fortawesome/fontawesome-free/js/brands'
+
+async/await in class usage need to install
+    npm install --save-dev @babel/plugin-transform-runtime //for dev mode
+    npm install --save @babel/runtime //for prod mode
+  and add it into babel plugins:
+    {
+      "plugins": ["@babel/plugin-transform-runtime"]
+    }
+  and set useBuiltIns to usage for the presets
+    presets: [[
+      '@babel/env',
+      {
+        "useBuiltIns": "usage"
+      }]
+    ]

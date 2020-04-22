@@ -1,7 +1,8 @@
 const path = require('path'),
   { CleanWebpackPlugin } = require('clean-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
-  distFolder = path.resolve(__dirname, './dist')
+  distFolder = path.resolve(__dirname, './dist'),
+  webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -55,6 +56,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: 'jquery'
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['hello'],
